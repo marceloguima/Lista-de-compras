@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style/style.css" />
+<!-- cdn font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <title>Lista de compras</title>
+    </head>
+     <body>
+
+        <div class="container">
+            <h1>Lista de compras</h1>
+            <form action="" class="entrada-item">
+                <input class="campo-item"
+                    type="text"
+                    name="item"
+                    id="item"
+                    placeholder="Digite um item" 
+                />
+                <p class="mensagem-quantidade">Informe a quantidade</p>
+
+                <div class="add-quantidade">
+                    <input class="campo-quantidade vazio"
+                        type="number"
+                        name="quantidade"
+                        id="quantidade"
+                        placeholder="Quant"
+                    />
+                    <button class="add" onclick="adicionar()">Adicionar</button>
+                </div>
+            </form>
+      <!-- itens -->
+            <div class="itens">
+                 <!-- item  -->
+                 <ul id="lista-ul">
+                    <!-- <li>
+                        <div class="item">
+                            <input type="checkbox" />
+                            <div class="nome-quantidade">
+                                <h4>amaciante</h4>
+                                <p>2 unidades</p>
+                            </div>
+                            <div class="preco-dellete">
+                                <form action="" class="form-preco">
+                                    <input class="campo-preco" type="number" placeholder="R$ und." />
+                                </form>
+                                <button class="apagar"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </li> -->
+                 </ul>
+
+              <button class="salvar">Salvar</button>
+            <div class="total">
+                <h3>Total:</h3>
+                <h3>R$ 0,00</h3>
+            </div>
+        </div>
+
+        <script src="../js/script.js"></script>
+    </body>
+     
+</html>
