@@ -44,8 +44,9 @@ body{
 
 .campo-item, .campo-quantidade, .campo-preco{
     padding: 7px;
-    height: 35px;
+    height: 45px;
     border-radius: 10px;
+    font-size: 1rem;
     border: none;
     background: var(--input-bg);
     color: #fff;
@@ -56,6 +57,8 @@ body{
     color: var(--text-color);
     padding: 10px;
     width: 40%;
+    height: 45px;
+    font-size: 1rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;

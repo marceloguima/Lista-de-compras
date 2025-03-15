@@ -4,28 +4,31 @@ let itemDigitado = document.querySelector(".campo-item");
 let quantidade = document.querySelector(".campo-quantidade");
 const botao = document.querySelector(".add");
 const lista = document.getElementById("lista-ul");
-const msgCampoVazio = document.querySelector(".mensagem-quantidade")
+const msgCampoVazio = document.querySelector(".mensagem-quantidade");
 
-let item = []
+let item = [];
 
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
-    
 });
 
 function adicionar() {
     let valorDigitado = itemDigitado.value.trim();
     let quantia = quantidade.value.trim();
 
-if(quantia == ""){
-    quantidade.classList.add("vazio")
-    msgCampoVazio.style.display = "block";
-    setTimeout(function (){
-        quantidade.classList.remove("vazio")
-        msgCampoVazio.style.display ="none"
-    }, 2000) ;
-    return
-}
+   
+       
+        
+ if (valorDigitado === "" || quantia === "") {
+        valorDigitado.classList.add("vazio");
+        quantidade.classList.add("vazio");
+        msgCampoVazio.style.display = "block";
+        setTimeout(function aviso() {
+            quantidade.classList.remove("vazio");
+            msgCampoVazio.style.display = "none";
+        }, 2000);
+        return;
+    }
     let itemDaLista = document.createElement("li");
     // li dentro da ul
     lista.append(itemDaLista);
@@ -74,10 +77,8 @@ if(quantia == ""){
     iconeLixeira.classList.add("fa-solid");
     iconeLixeira.classList.add("fa-trash");
     apagarItem.append(iconeLixeira);
-    
+
     limpaCampo();
-    
-    
 }
 
 function limpaCampo() {
