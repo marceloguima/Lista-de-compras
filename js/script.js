@@ -19,13 +19,10 @@ function adicionar() {
 
     if (valorDigitado === "") {
         itemDigitado.classList.add("vazio");
-
         mensagemDigiteItem.style.display = "block";
 
         setTimeout(function () {
             itemDigitado.classList.remove("vazio");
-            //   quantidade.classList.remove("vazio");
-            //   msgCampoVazio.style.display = "none";
             mensagemDigiteItem.style.display = "none";
         }, 2000);
     
@@ -81,6 +78,7 @@ function adicionar() {
     let precoProduto = document.createElement("input");
     precoProduto.type = "number";
     precoProduto.classList.add("campo-preco");
+    precoProduto.placeholder = "R$:0.00"
 
     campoPrecoApagar.append(precoProduto);
     const apagarItem = document.createElement("button");
