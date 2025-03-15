@@ -4,7 +4,7 @@ let itemDigitado = document.querySelector(".campo-item");
 let quantidade = document.querySelector(".campo-quantidade");
 const botao = document.querySelector(".add");
 const lista = document.getElementById("lista-ul");
-
+const msgCampoVazio = document.querySelector(".mensagem-quantidade")
 
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
@@ -12,21 +12,17 @@ formulario.addEventListener("submit", function (evento) {
 });
 
 function adicionar() {
-   
-   
-   
     let valorDigitado = itemDigitado.value.trim();
     let quantia = quantidade.value.trim();
 
-    
 if(quantia == ""){
-   
-   quantidade.style.border = "solid 1px red"
-   quantidade.style.background = "#fff"
-   quantidade.style.placeholder = "red"
-
-   return
-  
+    quantidade.classList.add("vazio")
+    msgCampoVazio.style.display = "block";
+    setTimeout(function (){
+        quantidade.classList.remove("vazio")
+        msgCampoVazio.style.display ="none"
+    }, 2000) ;
+    return
 }
     let itemDaLista = document.createElement("li");
     // li dentro da ul
