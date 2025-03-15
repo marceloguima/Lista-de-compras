@@ -20,7 +20,7 @@ function adicionar() {
        
         
  if (valorDigitado === "" || quantia === "") {
-        valorDigitado.classList.add("vazio");
+        // valorDigitado.classList.add("vazio");
         quantidade.classList.add("vazio");
         msgCampoVazio.style.display = "block";
         setTimeout(function aviso() {
