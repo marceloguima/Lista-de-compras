@@ -81,7 +81,6 @@ body{
     color: var(--text-color);
     border: none;
     cursor: pointer;
-   
     margin-top: 10px;
 }
 
@@ -102,8 +101,8 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    margin: 10px 4px;
+    padding: 5px;
+    margin: 10px 0;
 }
 
 .preco-dellete{
@@ -144,14 +143,21 @@ i{
 }
 
 h4{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     text-align: center;
+   
 }
+
+.mensagem-digite-item, .mensagem-quantidade{
+    margin-bottom: 10px;
+    color: #ee0134;
+}
+
 
 p{
     font-size: 0.8rem;
-  
+   
 }
 
 
@@ -177,7 +183,6 @@ p{
  
 .vazio{
     background: #ffffff;
-    border:solid 2px #da0303;
     box-shadow: 0 0 20px 2px;
 
 }
@@ -187,6 +192,11 @@ p{
     display: none;
 
     
+}
+
+
+.mensagem-digite-item{
+    display: none;
 }
 
 
