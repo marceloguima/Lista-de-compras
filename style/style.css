@@ -23,8 +23,7 @@ body{
 }
 
 .container{
-    
-    max-width: 100%;
+    width: 400px;
     margin: 0 auto;
     border: solid 1px var(--text-color);
     border-radius: 10px;
@@ -39,7 +38,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 400px;
+    width:50% ;
     margin: 20px 0;
 }
 
@@ -85,7 +84,7 @@ body{
 
 
 .itens{
-    width: 268px;
+    width: 50%;
     color: var(--bg-color);
    
 }
@@ -185,4 +184,19 @@ p{
     display: none;
 
     
+}
+
+
+@media(max-width: 400px){
+    .container{
+        width: 95%;
+    }
+
+    .entrada-item{
+        width: 90%;
+    }
+
+    .itens{
+        width: 90%;
+    }
 }
