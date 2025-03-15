@@ -6,6 +6,8 @@ const botao = document.querySelector(".add");
 const lista = document.getElementById("lista-ul");
 const msgCampoVazio = document.querySelector(".mensagem-quantidade")
 
+let item = []
+
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
     
