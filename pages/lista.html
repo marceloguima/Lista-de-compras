@@ -14,7 +14,6 @@
             <h1>Faça sua lista</h1>
             <form action="" class="entrada-item">
                 <h4 class="mensagem-digite-item">Digite um item</h4>
-
                 <input class="campo-item "
                     type="text"
                     name="item"
@@ -30,7 +29,8 @@
                         id="quantidade"
                         placeholder="Quant"
                     />
-                    <button class="add" onclick="adicionar()">Adicionar</button>
+                    <button class="add"   onclick="mostraNaTela()">Adicionar</button>
+                  
                 </div>
             </form>
       <!-- itens -->
@@ -43,7 +43,7 @@
               <button class="salvar">Salvar</button>
             <div class="total">
                 <h3>Total:</h3>
-                <h3>R$ 0,00</h3>
+                <h3 id="total">R$ 0,00</h3>
             </div>
         </div>
 

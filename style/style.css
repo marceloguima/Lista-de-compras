@@ -25,7 +25,7 @@ body{
 .container{
     width: 500px;
     margin: 0 auto;
-    border: solid 1px var(--text-color);
+    /* border: solid 1px var(--text-color); */
     border-radius: 10px;
     display: flex;
     flex-direction: column;

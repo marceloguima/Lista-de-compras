@@ -1,22 +1,23 @@
-//selecionando os elementos do DOM
+let item = [];
 const formulario = document.querySelector(".entrada-item");
-let itemDigitado = document.querySelector(".campo-item");
-let quantidade = document.querySelector(".campo-quantidade");
+const itemDigitado = document.querySelector(".campo-item");
+const quantidade = document.querySelector(".campo-quantidade");
 const botao = document.querySelector(".add");
 const lista = document.getElementById("lista-ul");
 const msgCampoVazio = document.querySelector(".mensagem-quantidade");
 const mensagemDigiteItem = document.querySelector(".mensagem-digite-item");
+const totalElement = document.getElementById("total");
 
-let item = [];
+// ---------------------------------------------------
 
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
 });
 
-function adicionar() {
+function mostraNaTela() {
     let valorDigitado = itemDigitado.value.trim();
     let quantia = quantidade.value.trim();
-
+    quantia = parseInt(quantia); 
     if (valorDigitado === "") {
         itemDigitado.classList.add("vazio");
         mensagemDigiteItem.style.display = "block";
@@ -25,7 +26,6 @@ function adicionar() {
             itemDigitado.classList.remove("vazio");
             mensagemDigiteItem.style.display = "none";
         }, 2000);
-    
     }
 
     if (quantia === "") {
@@ -38,20 +38,14 @@ function adicionar() {
         return;
     }
 
-
     let itemDaLista = document.createElement("li");
-    // li dentro da ul
     lista.append(itemDaLista);
 
     let elementosDaLista = document.createElement("div");
-    // adicionando a div criada uma classe
     elementosDaLista.classList.add("item");
-    // colocando a div dentro da li
     itemDaLista.append(elementosDaLista);
-    // criando o checkbox
     let check = document.createElement("input");
     check.type = "checkbox";
-    // colocando o checkbox dentro de elementosDaLista
     elementosDaLista.append(check);
 
     let valorQuantidade = document.createElement("div");
@@ -78,9 +72,12 @@ function adicionar() {
     let precoProduto = document.createElement("input");
     precoProduto.type = "number";
     precoProduto.classList.add("campo-preco");
-    precoProduto.placeholder = "R$:0.00"
-
+    precoProduto.placeholder = "R$:0.00";
+    precoProduto.addEventListener("change", calcularTotal);
     campoPrecoApagar.append(precoProduto);
+    precoProduto.dataset.quantidade = quantia;
+    
+
     const apagarItem = document.createElement("button");
     apagarItem.classList.add("apagar");
     campoPrecoApagar.append(apagarItem);
@@ -95,4 +92,21 @@ function adicionar() {
 function limpaCampo() {
     itemDigitado.value = "";
     quantidade.value = "";
+}
+
+function calcularTotal() {
+    let total = 0;
+    const precos = document.querySelectorAll(".campo-preco");
+ 
+    precos.forEach((preco) => {
+        const valor = parseFloat(preco.value);
+        const quantidade = parseFloat(preco.dataset.quantidade);
+
+        if (!isNaN(valor) && !isNaN(quantidade)) {
+            total += valor * quantidade ; 
+           
+        }
+    });
+
+    totalElement.textContent = "R$ " + total.toFixed(2); 
 }
